@@ -1,0 +1,4 @@
+storePassword=bahonika
+keyPassword=bahonika
+keyAlias=upload
+storeFile=E:\Flutter\Projects\plant_book\keystore.jks

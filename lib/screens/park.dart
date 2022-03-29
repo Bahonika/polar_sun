@@ -41,26 +41,14 @@ class _ParkState extends State<Park> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color.fromRGBO(233, 212, 0, 1)),
         centerTitle: true,
-        backgroundColor: mainColor,
-        toolbarHeight: 40,
         title: Text(
           "Заповедники и сады",
-          style: TextStyle(color: Color.fromRGBO(233, 212, 0, 1)),
         ),
       ),
       body: Container(
           padding: EdgeInsets.symmetric(horizontal: 8),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(62, 151, 139, 1),
-              Color.fromRGBO(94, 145, 73, 1)
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )),
+
           child: ListView(
             children: [
               SizedBox(
@@ -141,21 +129,7 @@ class _ParkState extends State<Park> {
                     " 35\n\nСайт: https://kandalaksha-reserve.ru/\nКонтакты: +7 (921) 043-09-30 - "
                     "оперативный дежурный",
               ),
-              SizedBox(
-                height: 8,
-              ),
-              // ParkButton(
-              //     "Сад-институт",
-              //     imgPasvikList
-              //         .map((item) => Container(
-              //               child: Center(
-              //                 child: Image.asset(item),
-              //               ),
-              //             ))
-              //         .toList()),
-              SizedBox(
-                height: 8,
-              ),
+
             ],
           )),
     );

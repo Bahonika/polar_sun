@@ -10,24 +10,12 @@ class ParkButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(color: Color.fromRGBO(68, 125, 95, 1.0), offset: Offset(3,3), blurRadius: 2),
-          BoxShadow(color: Color.fromRGBO(86, 147, 132, 1.0), offset: Offset(-3,-3), blurRadius: 2),
-        ],
-      ),
+    return Card(
+      color: Theme.of(context).colorScheme.primaryContainer,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Container(
           height: MediaQuery.of(context).size.width * 0.25,
-          decoration: BoxDecoration(
-            gradient: RadialGradient(colors: [
-              Color.fromRGBO(62, 151, 139, 1),
-              Color.fromRGBO(94, 145, 73, 1)
-            ], center: Alignment.centerLeft, radius: 7),
-          ),
           child: ElevatedButton(
             style: ButtonStyle(
               padding: MaterialStateProperty.all(EdgeInsets.all(0)),
@@ -51,8 +39,6 @@ class ParkButton extends StatelessWidget {
                 Text(
                   parkName,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 20, color: Color.fromRGBO(233, 212, 0, 1)),
                 )
               ],
             ),

@@ -124,8 +124,6 @@ class _MyAppState extends State<MyApp> {
                   end: Alignment.bottomRight,
                 )),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     MainMenu(),
                     Expanded(

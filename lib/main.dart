@@ -47,8 +47,8 @@ class _MyAppState extends State<MyApp> {
           textTheme: TextTheme(
               displaySmall: TextStyle(color: Color.fromRGBO(233, 212, 0, 1))),
           colorScheme: ColorScheme.fromSwatch()
-              .copyWith(onPrimary: Color.fromRGBO(233, 212, 0, 1))
-          .copyWith(primaryContainer: Color.fromRGBO(214, 221, 255, 0.4) )
+              .copyWith(onPrimary: Colors.black54)
+          .copyWith(primaryContainer: Color.fromRGBO(214, 221, 255, 1) )
               .copyWith(primary: Color.fromRGBO(94, 145, 73, 1))
               .copyWith(secondary: Color.fromRGBO(62, 151, 139, 1))),
       debugShowCheckedModeBanner: false,
@@ -90,16 +90,7 @@ class _MyAppState extends State<MyApp> {
             child: FractionallySizedBox(
               widthFactor: 1,
               child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromRGBO(62, 151, 139, 1),
-                      Color.fromRGBO(94, 145, 73, 1)
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
+                color: Theme.of(context).colorScheme.primaryContainer,
                 child: Padding(
                   padding: const EdgeInsets.only(
                       left: 8.0, right: 8, bottom: 510, top: 8),

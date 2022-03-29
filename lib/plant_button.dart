@@ -21,20 +21,20 @@ class PlantButton extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              margin: EdgeInsets.all(8),
+              margin: EdgeInsets.all(5),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.asset(
                   image,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  height: MediaQuery.of(context).size.width * 0.4,
-                  fit: BoxFit.fitHeight,
+                  width: MediaQuery.of(context).size.width * 0.21,
+                  height: MediaQuery.of(context).size.width * 0.21,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),
             Divider(),
             Text(name,
-                textAlign: TextAlign.center, style: TextStyle(fontSize: 20)),
+                textAlign: TextAlign.center),
           ],
         ),
       ),

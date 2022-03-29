@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_book/data/entities/plant.dart';
 import 'package:plant_book/image.dart';
 
 class PlantPage extends StatelessWidget {
@@ -62,43 +63,43 @@ class PlantPage extends StatelessWidget {
               rows: [
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Название')),
+                    DataCell(Text(Plant.nameAlias)),
                     DataCell(Text(name)),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Семейство')),
+                    DataCell(Text(Plant.familyAlias)),
                     DataCell(Text(family)),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Место сбора')),
+                    DataCell(Text(Plant.placeAlias)),
                     DataCell(Text(place)),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Местообитание')),
+                    DataCell(Text(Plant.habitatAlias)),
                     DataCell(Text(habitat)),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Дата сбора')),
+                    DataCell(Text(Plant.dateAlias)),
                     DataCell(Text(date)),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Собрал')),
+                    DataCell(Text(Plant.collectorAlias)),
                     DataCell(Text(collector)),
                   ],
                 ),
                 DataRow(
                   cells: <DataCell>[
-                    DataCell(Text('Определил')),
+                    DataCell(Text(Plant.determinateAlias)),
                     DataCell(Text(determinate)),
                   ],
                 ),

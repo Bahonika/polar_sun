@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_book/data/entities/plant.dart';
 import 'package:plant_book/data/repositories/plant_repository.dart';
 import 'package:plant_book/main.dart';
-import 'package:plant_book/screens/plant_page.dart';
+import 'package:plant_book/screens/plant_view.dart';
 
 import '../plant_button.dart';
 
@@ -20,7 +20,7 @@ class _HerbState extends State<Herb> {
   final Map<String, String> queryParams = {};
 
   Future<void> getData(Map<String, String> queryParams) async {
-    var plants = await repository.getAll(queryParams: queryParams);
+    plants = await repository.getAll(queryParams: queryParams);
     setState(() {});
   }
 
@@ -45,6 +45,7 @@ class _HerbState extends State<Herb> {
                 .loadString('lib/assets/myJson.json'),
             builder: (context, snapshot) {
               var data = json.decode(snapshot.data.toString());
+              print(data);
               return ListView.separated(
                   separatorBuilder: (context, index) {
                     return SizedBox(
@@ -63,16 +64,8 @@ class _HerbState extends State<Herb> {
                           PlantButton(
                               data[i]['name'],
                               PlantPage(
-                                  data[i]['name'],
-                                  'lib/assets/' +
-                                      data[i]['id'].toString() +
-                                      ".jpg",
-                                  data[i]['family'],
-                                  data[i]['place'],
-                                  data[i]['habitat'],
-                                  data[i]['date'],
-                                  data[i]['collector'],
-                                  data[i]['determinate']),
+                                plant: Plant.fromJson(data[i]),
+                              ),
                               'lib/assets/' +
                                   data[i]['id'].toString() +
                                   ".jpg"),

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:plant_book/screens/plant_page.dart';
+import 'package:plant_book/screens/plant_view.dart';
 
 import '../plant_button.dart';
 

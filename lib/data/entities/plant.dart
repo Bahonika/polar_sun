@@ -25,6 +25,7 @@ class Plant implements Displayable {
     this.collector,
     this.determinate,
   });
+
   //aliases
   static const String nameAlias = "Название";
   static const String familyAlias = "Семейство";
@@ -35,7 +36,7 @@ class Plant implements Displayable {
   static const String determinateAlias = "Определил";
 
 
-  factory Plant.fromJson(Map<String, dynamic> json){
+  factory Plant.fromJson(Map<String, dynamic> json) {
     return Plant(
       id: json["id"],
       image: json["image"],
@@ -46,7 +47,6 @@ class Plant implements Displayable {
       date: utf8convert(json["date"]),
       collector: utf8convert(json["collector"]),
       determinate: utf8convert(json["determinate"]),
-
     );
   }
 
@@ -62,5 +62,4 @@ class Plant implements Displayable {
       Plant.determinateAlias: determinate!,
     };
   }
-
 }

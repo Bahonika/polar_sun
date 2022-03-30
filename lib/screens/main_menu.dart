@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plant_book/screen_button.dart';
-import 'package:plant_book/screens/park.dart';
+import '../templates/screen_button.dart';
+import 'package:plant_book/screens/parks.dart';
 
 import 'herb.dart';
 
@@ -16,14 +16,9 @@ class _MainMenuState extends State<MainMenu> {
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
-          SizedBox(height: 16,),
-          ScreenButton("Цифровой гербарий", "lib/assets/tsifrovoy_gerbariy.png", Herb()),
-          SizedBox(height: 12,),
-
+          ScreenButton("Цифровой гербарий", "lib/assets/herbarium.png", Herb()),
           ScreenButton("Флора", "lib/assets/flora.png", Herb()),
-          SizedBox(height: 12,),
-
-          ScreenButton("Заповедники и сады", "lib/assets/sady.png", Park()),
+          ScreenButton("Заповедники и сады", "lib/assets/sady.png", Parks()),
         ],
       ),
     );

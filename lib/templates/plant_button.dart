@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:plant_book/screens/plant_view.dart';
+
+import '../data/entities/plant.dart';
 
 class PlantButton extends StatelessWidget {
-  final String name;
-  final Widget widget;
-  final String image;
+  final Plant plant;
 
-  const PlantButton(this.name, this.widget, this.image);
+  const PlantButton(this.plant);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class PlantButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => widget));
+              context, MaterialPageRoute(builder: (context) => PlantView(plant: plant)));
         },
         child: Row(
           children: [
@@ -25,7 +26,7 @@ class PlantButton extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.asset(
-                  image,
+                  plant.image,
                   width: MediaQuery.of(context).size.width * 0.21,
                   height: MediaQuery.of(context).size.width * 0.21,
                   fit: BoxFit.fitWidth,
@@ -33,7 +34,7 @@ class PlantButton extends StatelessWidget {
               ),
             ),
             Divider(),
-            Text(name,
+            Text(plant.name,
                 textAlign: TextAlign.center),
           ],
         ),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:plant_book/data/entities/plant.dart';
-import 'package:plant_book/image.dart';
+import 'package:plant_book/scaling_image.dart';
 
-class PlantPage extends StatefulWidget {
+class PlantView extends StatefulWidget {
   final Plant plant;
 
-  PlantPage({required this.plant});
+  PlantView({required this.plant});
 
   @override
-  State<PlantPage> createState() => _PlantPageState();
+  State<PlantView> createState() => _PlantViewState();
 }
 
-class _PlantPageState extends State<PlantPage> {
+class _PlantViewState extends State<PlantView> {
   List<DataRow> rows = [];
 
   DataTable getTable() {
@@ -33,7 +33,7 @@ class _PlantPageState extends State<PlantPage> {
     widget.plant.getFields().forEach((key, value) {
       rows.add(DataRow(cells: [
         DataCell(Text(key)),
-        DataCell(value != null ? Text(value) : Text("-")),
+        DataCell(Text(value)),
       ]));
     });
   }
@@ -53,21 +53,19 @@ class _PlantPageState extends State<PlantPage> {
           SliverAppBar(
             pinned: true,
             expandedHeight: 3870 / (2701 / MediaQuery.of(context).size.width),
-            flexibleSpace: FlexibleSpaceBar(
-              background: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ScalingImage(widget.plant.image)));
-                  },
-                  child:
-                      FittedBox(fit: BoxFit.fill, child: Image.asset(widget.plant.image))),
-            ),
+            // flexibleSpace: FlexibleSpaceBar(
+            //   background: InkWell(
+            //       onTap: () {
+            //         Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //                 builder: (context) => ScalingImage(widget.plant.image)));
+            //       },
+            //       child:
+            //           FittedBox(fit: BoxFit.fill, child: Image.asset(widget.plant.image))),
+            // ),
           ),
-          SliverToBoxAdapter(
-            child: getTable()
-          ),
+          SliverToBoxAdapter(child: getTable()),
         ],
       ),
     );

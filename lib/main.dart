@@ -19,14 +19,16 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget build(BuildContext context) {
+    Color primary = Color.fromRGBO(75, 121, 55, 1.0);
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitDown,
       DeviceOrientation.portraitUp,
     ]);
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-        statusBarColor: Color.fromRGBO(94, 145, 73, 1),
-        systemNavigationBarColor: Color.fromRGBO(94, 145, 73, 1),
+        statusBarColor: primary,
+        systemNavigationBarColor: primary,
       ),
     );
 
@@ -34,15 +36,14 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
           scaffoldBackgroundColor: Color.fromRGBO(187, 197, 177, 1),
           backgroundColor: Color.fromRGBO(187, 197, 177, 1),
-          primaryColor: Color.fromRGBO(94, 145, 73, 1),
-          secondaryHeaderColor: Color.fromRGBO(62, 151, 139, 1),
+          primaryColor: primary,
           canvasColor: Color.fromRGBO(187, 197, 177, 1),
           textTheme: TextTheme(
               displaySmall: TextStyle(color: Color.fromRGBO(233, 212, 0, 1))),
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(onPrimary: Colors.black54)
               .copyWith(primaryContainer: Color.fromRGBO(245, 245, 245, 0.6))
-              .copyWith(primary: Color.fromRGBO(94, 145, 73, 1))
+              .copyWith(primary: primary)
               .copyWith(secondary: Color.fromRGBO(62, 151, 139, 1))),
       debugShowCheckedModeBanner: false,
       home: Scaffold(

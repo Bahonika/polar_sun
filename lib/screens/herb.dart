@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:plant_book/data/entities/plant.dart';
 import 'package:plant_book/data/repositories/plant_repository.dart';
-import 'main.dart';
+import '../main.dart';
 import 'package:plant_book/screens/plant_view.dart';
 
 import '../templates/plant_button.dart';
@@ -21,6 +21,7 @@ class _HerbState extends State<Herb> {
 
   Future<void> getData(Map<String, String> queryParams) async {
     plants = await repository.getAll(queryParams: queryParams);
+    print(plants);
     setState(() {});
   }
 
